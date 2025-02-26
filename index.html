@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Test - Guardianes</title>
+<style>
+       /* Estilos generales */
+       body {
+           font-family: Arial, sans-serif;
+           text-align: center;
+           background-color: #f4f4f4;
+           margin: 0;
+           padding: 0;
+       }
+       /* Estilos del header */
+       header {
+           background-color: #ffffff;
+           padding: 20px;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+       }
+       .logo {
+           width: 150px; /* Ajusta el tamaño del logo */
+           height: auto;
+       }
+       /* Contenedor principal */
+       .container {
+           max-width: 600px;
+           margin: 20px auto;
+           padding: 20px;
+           background: #fff;
+           box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+           border-radius: 8px;
+       }
+       /* Botones */
+       button {
+           background-color: #007bff;
+           color: white;
+           border: none;
+           padding: 10px 20px;
+           margin: 5px;
+           cursor: pointer;
+           font-size: 16px;
+           border-radius: 5px;
+       }
+.nova { background-color: #009688; color: white; }
+       .seg { background-color: #e91e63; color: white; }
+       .forti { background-color: #4caf50; color: white; }
+       .tali { background-color: #ff9800; color: white; }
+       .all { background-color: #3f51b5; color: white; }
+       }
+       button:hover {
+           background-color: #0056b3;
+       }
+       /* Imagen del guardián */
+       .guardian-img {
+           width: 150px; /* Tamaño estándar */
+           height: auto;
+           margin: 20px auto;
+           display: none; /* Oculto hasta mostrar el resultado */
+       }
+       /* Estilo para la sección de resultado */
+       #result {
+           font-size: 18px;
+           font-weight: bold;
+           margin-top: 20px;
+       }
+</style>
+</head>
+<body>
+<!-- Header con logo -->
+<header>
+<img src="LOGO.png" alt="Logo de la compañía" class="logo">
+</header>
+<div class="container">
+<h2>¡Contagia la buena onda!</h2>
+<p>Selecciona la cualidad con la que más te identificas.</p>
+<button class="nova" onclick="showResult('Nova', 'Tus ideas son un gran ejemplo del Pensamiento Innovador, continua compartiendolas', 'Nova.png')">A) Promueves nuevas ideas y te gusta mejorar constantemente los procesos.</button>
+<button class="seg" onclick="showResult('Seg', 'Continua compartiendo las medidas de Seguridad Integral, comparte momentos de seguridad con tus compañeros(as)', 'Seg.png')">B) Te gusta generar un ambiente seguro y saludable.</button>
+<button class="forti" onclick="showResult('Forti', 'Tus acciones diarias generan el Fortalecimiento del Sistema, eres un(a) embajador(a) admirable', 'Forti.png')">C) Aseguras los procesos de tu área y eficientas tu rol día a día.</button>
+<button class="tali" onclick="showResult('Tali', 'Tienes un claro Enfoque en el Talento, continuemos con el camino del acompañamiento', 'Tali.png')">D) Fomentas el desarrollo,la integración y el acompañamiento a los nuevos compañeros(as) que se integran a JDVSC.</button>
+<button class="all" onclick="showResult('Todos', 'Tienes un equilibrio constante', 'Guardian.png')">E) Me identifico con todas porque son igual de importantes.</button>
+<p id="result"></p>
+<img id="guardian-img" class="guardian-img" src="" alt="Guardián">
+</div>
+<script>
+       function showResult(guardian, description, imgSrc) {
+           let guardianImg = document.getElementById("guardian-img");
+           let resultText = document.getElementById("result");
+           resultText.innerHTML = "Tu guardián es <strong>" + guardian + "</strong>: " + description + ".";
+           guardianImg.src = imgSrc;
+           guardianImg.style.display = "block";
+           if (guardian === "Todos") {
+               guardianImg.style.width = "200px";  // Ajuste específico para "Todos"
+           } else {
+               guardianImg.style.width = "150px";  // Tamaño estándar para los demás
+           }
+       }
+</script>
+</body>
+</html>
